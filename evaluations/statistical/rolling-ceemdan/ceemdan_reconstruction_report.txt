@@ -1,0 +1,29 @@
+
+        "ROLLING CEEMDAN & RECONSTRUCTION REPORT
+"
+        "===========================================
+"
+        f"Total Input Data      : 6108 rows
+"
+        f"CEEMDAN Window Size   : 252 days
+"
+        f"Trials (per window)   : 50
+"
+        f"Total Master Data (ML): 5856 rows
+"
+        f"Total Computation Time: 6h 22m 9.64s
+
+"
+        "RECONSTRUCTION METHOD:
+"
+        "Based on Sample Entropy and Zero Crossing Rate (ZCR) tests,
+"
+        "IMFs 1, 2, and 3 are identified as high‑frequency noise.
+"
+        "The 'Reconstructed_Signal' is formed by summing IMF 4
+"
+        "through the last IMF plus the CEEMDAN residue.
+"
+        "===========================================
+"
+    

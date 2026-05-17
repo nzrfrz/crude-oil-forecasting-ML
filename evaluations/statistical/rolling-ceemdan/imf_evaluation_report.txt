@@ -1,0 +1,23 @@
+REPORT ON IMF NOISE VS SIGNAL JUSTIFICATION
+=======================================================
+Evaluation Methods: Zero Crossing Rate (ZCR), Energy, & Sample Entropy
+Number of Observations: 6026 rows (Training Data)
+-------------------------------------------------------
+IMF        | ZCR        | Sample Entropy 
+-------------------------------------------------------
+IMF 1     | 0.6439     | 1.0055         
+IMF 2     | 0.2974     | 0.6740         
+IMF 3     | 0.1377     | 0.5676         
+IMF 4     | 0.0652     | 0.4778         
+IMF 5     | 0.0312     | 0.3225         
+IMF 6     | 0.0151     | 0.1103         
+IMF 7     | 0.0068     | 0.0530         
+IMF 8     | 0.0033     | 0.0250         
+IMF 9     | 0.0010     | 0.0069         
+IMF 10    | 0.0005     | 0.0032         
+-------------------------------------------------------
+INTERPRETATION GUIDELINE FOR THESIS:
+1. High ZCR + High Entropy (> 0.5) = High-Frequency Noise (Random/Speculative Signal).
+2. Low ZCR + Low Entropy = Patterned Signal (Economic/Market Cycle).
+3. Based on the table above, you can mathematically justify
+   discarding IMFs with high entropy (usually IMF 1 to 3).

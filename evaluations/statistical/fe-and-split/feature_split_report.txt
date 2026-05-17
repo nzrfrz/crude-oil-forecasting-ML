@@ -1,0 +1,21 @@
+FEATURE ENGINEERING & DYNAMIC SPLIT REPORT
+===========================================
+1. FEATURES USED (t-1 lags):
+   - Lag1_Price
+   - Lag1_Rolling_LOWESS_Trend
+   - Lag1_Reconstructed_Signal
+   - Lag1_USD_Index
+   - Lag1_SP500
+   - Lag1_US10Y
+   - Lag1_VIX
+
+2. DATASET SPLIT (Chronological):
+   [TRAIN]  : 2003-01-14 to 2021-09-01 | Count: 4684 rows
+   [TEST]   : 2021-09-02 to 2023-12-29 | Count: 585 rows
+   [UNSEEN] : 2024-01-02 to 2026-04-30 | Count: 586 rows
+
+3. SCALING & PREPROCESSING METHOD:
+   - Outlier Handling: Winsorization (clipping at 1st and 99th percentiles from Train Data)
+   - Scaling Algorithm: MinMaxScaler (range 0 to 1) with clip=True
+   - Fit Strategy: Fitted ONLY on TRAIN data to prevent data leakage.
+===========================================

@@ -1,0 +1,28 @@
+
+ROLLING LOWESS DECOMPOSITION REPORT
+===================================
+Input trading days       : 6360
+Window size (days)       : 252
+LOWESS frac              : 0.2
+Output rows (after warmup): 6108
+Date range              : 2002-01-09 00:00:00 to 2026-04-30 00:00:00
+Execution time          : 0h 1m 19.71s
+===================================
+
+SUMMARY STATISTICS:
+                        count    mean         std         min         25%         50%         75%         max        skewness
+WTI                     6108   66.929602   23.536320   -37.630001   49.447500   65.959999   83.502499   145.289993   0.186943
+LOWESS_Trend            6108   66.981958   23.782195     6.763141   49.054961   66.238120   84.148355   143.923054   0.215841
+Rolling_LOWESS_Residual 6108   -0.052356    3.289965   -44.393142   -1.517141    0.066495    1.542835    25.890373  -0.501383
+
+STATIONARITY TEST (Residuals - ADF):
+- ADF Statistic      : -16.547501
+- P-Value            : 1.958601e-29
+- Conclusion         : Yes (Stationary) (important for CEEMDAN)
+
+DESCRIPTIVE STATISTICS (Residuals):
+- Mean               : -0.052356 (near zero indicates good detrending)
+- Std Deviation      : 3.289695
+- Skewness           : -0.501383
+- Kurtosis           : 12.312998
+===================================
