@@ -82,6 +82,51 @@ best_xgb_params = xgb_tuner.best_params_
 print(f"       [✓] Best XGBoost parameters: {best_xgb_params}")
 
 # ==========================================
+# 2.6. SAVE BEST HYPERPARAMETERS TO TXT
+# ==========================================
+print("\n[+] Saving best hyperparameters to file...")
+
+hyperparams_report = f"""
+HYPERPARAMETER TUNING REPORT
+==========================================
+Tuning Method  : GridSearchCV
+CV Strategy    : TimeSeriesSplit (n_splits=5)
+Scoring Metric : neg_mean_absolute_error
+==========================================
+
+[SVR]
+  kernel   : rbf (fixed)
+  C        : {best_svr_params.get('C')}
+  gamma    : {best_svr_params.get('gamma')}
+  epsilon  : {best_svr_params.get('epsilon')}
+
+[Random Forest]
+  n_estimators     : {best_rf_params.get('n_estimators')}
+  max_depth        : {best_rf_params.get('max_depth')}
+  min_samples_split: {best_rf_params.get('min_samples_split')}
+  random_state     : 42 (fixed)
+
+[XGBoost]
+  n_estimators : {best_xgb_params.get('n_estimators')}
+  learning_rate: {best_xgb_params.get('learning_rate')}
+  max_depth    : {best_xgb_params.get('max_depth')}
+  subsample    : {best_xgb_params.get('subsample')}
+  random_state : 42 (fixed)
+
+[Stacking Ensemble]
+  Base Models  : SVR, Random_Forest, XGBoost
+  Meta-Learner : Ridge Regression (default alpha=1.0)
+  CV           : 5-fold
+==========================================
+"""
+
+hyperparam_path = f"{STATISTICAL_EVAL_PATH}/Best_Hyperparameters.txt"
+with open(hyperparam_path, "w") as f:
+    f.write(hyperparams_report)
+
+print(f"    -> Best hyperparameters saved at: {hyperparam_path}")
+
+# ==========================================
 # 3. MODEL INITIALIZATION & STACKING
 # ==========================================
 print("\n[+] Initializing base models and stacking ensemble...")
