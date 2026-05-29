@@ -1,0 +1,32 @@
+
+HYPERPARAMETER TUNING REPORT
+==========================================
+Tuning Method  : GridSearchCV
+CV Strategy    : TimeSeriesSplit (n_splits=5)
+Scoring Metric : neg_mean_absolute_error
+==========================================
+
+[SVR]
+  kernel   : rbf (fixed)
+  C        : 10
+  gamma    : 0.1
+  epsilon  : 0.001
+
+[Random Forest]
+  n_estimators     : 500
+  max_depth        : 10
+  min_samples_split: 10
+  random_state     : 42 (fixed)
+
+[XGBoost]
+  n_estimators : 100
+  learning_rate: 0.05
+  max_depth    : 3
+  subsample    : 0.8
+  random_state : 42 (fixed)
+
+[Stacking Ensemble]
+  Base Models  : SVR, Random_Forest, XGBoost
+  Meta-Learner : Ridge Regression (default alpha=1.0)
+  CV           : 5-fold
+==========================================
